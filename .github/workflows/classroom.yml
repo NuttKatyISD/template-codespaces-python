@@ -75,7 +75,7 @@ jobs:
         run: git checkout badges || git checkout -b badges
       - name: Create Points Badge
         uses: markpatterson27/points-bar@v1
-        if: scuccess() || failure()
+        if: success() || failure()
         with:
           points: ${{ env.POINTS_STRING || '0/100'}}
           path: .github/badges/points-badge.svg
