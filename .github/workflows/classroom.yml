@@ -33,9 +33,9 @@ jobs:
           setup-command: if [ -f "requirements.txt"]; then pip install -r requirements.txt; fi
           command: python runner.py
           input: |-
-
+            Some test input
           expected-output: |-
-            
+            Some expected output
           comparison-method: loose
           loose-trim: true
           loose-ignore-blank-lines: true
@@ -51,9 +51,9 @@ jobs:
           setup-command: if [ -f "requirements.txt"]; then pip install -r requirements.txt; fi
           command: python runner.py
           input: |-
-
+            Some test input
           expected-output: |-
-            
+            Some expected output
           comparison-method: loose
           loose-trim: true
           loose-ignore-blank-lines: true
