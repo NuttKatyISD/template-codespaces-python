@@ -34,7 +34,7 @@ jobs:
           command: python runner.py
           input: |-
 
-          output: |-
+          expected-output: |-
             
           comparison-method: loose
           loose-trim: true
@@ -52,7 +52,7 @@ jobs:
           command: python runner.py
           input: |-
 
-          output: |-
+          expected-output: |-
             
           comparison-method: loose
           loose-trim: true
