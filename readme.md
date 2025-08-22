@@ -1,9 +1,6 @@
 # Lab Title
 
-![Points Bar](../../blob/badges/.github/badges/points-badge.svg)
-
-Instructions go here... don't remove the link to the badge. It'll be
-created on first commit.
+Instructions go here
 
 ## Protected Files
 
