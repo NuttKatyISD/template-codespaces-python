@@ -16,6 +16,8 @@ permissions:
   checks: write
   actions: read
   contents: write
+  issues: write
+  pull-requests: write
 jobs:
   run-autograding-tests:
     runs-on: ubuntu-22.04
@@ -68,22 +70,3 @@ jobs:
           TEST-2_RESULTS: "${{steps.test-2.outputs.result}}"
         with:
           runners: test-1,test-2
-      - name: Checkout badge branch
-        if: success() || failure()
-        run: git checkout badges || git checkout -b badges
-      - name: Create Points Badge
-        uses: markpatterson27/points-bar@v1
-        if: success() || failure()
-        with:
-          points: ${{ env.POINTS_STRING || '0/100'}}
-          path: .github/badges/points-badge.svg
-          type: badge
-          label: Autograding
-      - name: Commit Badge
-        if: success() || failure()
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add '.github/badges/points-badge.svg'
-          git commit -m "Add/Update points bar" || exit 0
-          git push origin badges -f
